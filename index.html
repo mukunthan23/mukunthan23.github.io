@@ -47,18 +47,9 @@ alert("click sucess");
 	  
 	  var worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
 
-    // Find a specific worksheet 
-    var worksheet = worksheets.find(function (sheet) {
+    
 	    
-	    var sname="no name";
-	    if(sheet.name=="Extension Testing")
-	    {
-      		sname=sheet.name;
-	    }
-	    return sname;
-    });
-	    
-$("#resultBox1").html("I'm running in a dashboard named <strong>" + worksheet.name + "</strong>");
+//$("#resultBox1").html("I'm running in a dashboard named <strong>" + worksheet.name + "</strong>");
 	
 	// get the summary data for the sheet
 
