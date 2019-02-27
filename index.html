@@ -55,19 +55,11 @@ $(document).ready(function() {
 	    }
 	    return sname;
     });
+	    
+$("#resultBox1").html("I'm running in a dashboard named <strong>" + worksheet.name + "</strong>");
 	
 	// get the summary data for the sheet
- worksheet.getSummaryDataAsync().then(function (sumdata) {
 
-  var worksheetData = sumdata;
-  // The getSummaryDataAsync() method returns a DataTable
-  // Map the DataTable (worksheetData) into a format for display, etc.
-  $("#resultBox1").html("I'm running in a dashboard named <strong>" + dashboard.name + "</strong>");
-  
-  
-  
- });
-  
 	
     }, function(err) {
 
