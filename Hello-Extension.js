@@ -25,7 +25,9 @@ $(document).ready(function() {
     var worksheet = worksheets.find(function (sheet) {
       return sheet.name === "Extension Testing";
     });
-	
+$("#resultBox1").html("I'm running in a dashboard named <strong>" + dashboard.name + "</strong>");
+	    
+	    /*
 	// get the summary data for the sheet
  worksheet.getSummaryDataAsync().then(function (sumdata) {
 
@@ -35,14 +37,9 @@ $(document).ready(function() {
   $("#resultBox1").html("I'm running in a dashboard named <strong>" + dashboard.name + "</strong>");
   
  });
-  
-
- 
- 
- 
+  */
 
 
-	
     }, function(err) {
 
       // something went wrong in initialization
