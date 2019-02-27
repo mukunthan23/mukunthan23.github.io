@@ -42,11 +42,8 @@ $(document).ready(function() {
   const worksheetData = sumdata;
   // The getSummaryDataAsync() method returns a DataTable
   // Map the DataTable (worksheetData) into a format for display, etc.
-
- });
- 
- 
- // set the dimensions and margins of the graph
+  
+  // set the dimensions and margins of the graph
 var margin = {top: 30, right: 30, bottom: 30, left: 50},
     width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
@@ -96,6 +93,11 @@ var svg = d3.select("#my_dataviz")
           .x(function(d) { return x(d[0]); })
           .y(function(d) { return y(d[1]); })
       );
+
+ });
+ 
+ 
+ 
 
 
 	
