@@ -31,11 +31,13 @@ $(document).ready(function() {
   $("#initializeButton").click(function() {
 	  
 
-
+alert("click sucess");
     // Disable the button after it's been clicked
     $("#initializeButton").prop('disabled', true);
 
     tableau.extensions.initializeAsync().then(function() {
+	    
+	    alert("tableau function sucess");
 
       // Initialization succeeded! Get the dashboard
       var dashboard = tableau.extensions.dashboardContent.dashboard;
