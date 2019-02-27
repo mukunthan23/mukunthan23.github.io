@@ -22,10 +22,10 @@ $(document).ready(function() {
 	  const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
 
     // Find a specific worksheet 
-    var worksheet = worksheets.find(function (sheet) {
+    /*var worksheet = worksheets.find(function (sheet) {
       return sheet.name === "Extension Testing";
     });
-$("#resultBox1").html("I'm running in a dashboard named <strong>" + dashboard.name + "</strong>");
+$("#resultBox1").html("I'm running in a dashboard named <strong>" + dashboard.name + "</strong>");*/
 	    
 	    /*
 	// get the summary data for the sheet
