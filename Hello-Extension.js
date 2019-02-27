@@ -37,14 +37,14 @@ function kernelEpanechnikov(k) {
     var worksheet = worksheets.find(function (sheet) {
       return sheet.name === "Extension Testing";
     });
-	
+	 $("#resultBox1").html("I'm accessing worksheet named <strong>" + worksheet.name + "</strong>");
 	// get the summary data for the sheet
  worksheet.getSummaryDataAsync().then(function (sumdata) {
 
   const worksheetData = sumdata;
   // The getSummaryDataAsync() method returns a DataTable
   // Map the DataTable (worksheetData) into a format for display, etc.
-  
+  /*
   // set the dimensions and margins of the graph
 var margin = {top: 30, right: 30, bottom: 30, left: 50},
     width = 460 - margin.left - margin.right,
@@ -94,7 +94,7 @@ var svg = d3.select("#my_dataviz")
         .curve(d3.curveBasis)
           .x(function(d) { return x(d[0]); })
           .y(function(d) { return y(d[1]); })
-      );
+      );*/
 
  });
  
