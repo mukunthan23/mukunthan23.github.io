@@ -6,7 +6,7 @@ $(document).ready(function() {
   // Wait to initialize until the button is clicked.
   $("#initializeButton").click(function() {
 	  
-	  // Function to compute density
+	/*  // Function to compute density
 function kernelDensityEstimator(kernel, X) {
   return function(V) {
     return X.map(function(x) {
@@ -19,6 +19,7 @@ function kernelEpanechnikov(k) {
     return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
   };
 }
+*/
 
     // Disable the button after it's been clicked
     $("#initializeButton").prop('disabled', true);
