@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   // Hook up an event handler for the load button click.
   // Wait to initialize until the button is clicked.
-  $("#initializeButton").click(function() {
+
 
     // Disable the button after it's been clicked
     $("#initializeButton").prop('disabled', true);
@@ -19,5 +19,5 @@ $(document).ready(function() {
       // something went wrong in initialization
       $("#resultBox").html("Error while Initializing: " + err.toString());
     });
-  });
+
 });
