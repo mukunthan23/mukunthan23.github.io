@@ -47,10 +47,13 @@ $(document).ready(function() {
 
     // Find a specific worksheet 
     var worksheet = worksheets.find(function (sheet) {
+	    
+	    var sname="no name";
 	    if(sheet.name=="Extension Testing")
 	    {
-      		return sheet.name;
+      		sname=sheet.name;
 	    }
+	    return sname;
     });
 	
 	// get the summary data for the sheet
