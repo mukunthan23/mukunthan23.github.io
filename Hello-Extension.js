@@ -3,7 +3,7 @@ $(document).ready(function() {
   // Hook up an event handler for the load button click.
   // Wait to initialize until the button is clicked.
 
-    alert("I am here.");
+      console.log( "document loaded" );
   
     // Disable the button after it's been clicked
     $("#initializeButton").prop('disabled', true);
