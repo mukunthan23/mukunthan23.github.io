@@ -23,7 +23,7 @@
      <!-- Your JavaScript code that uses the Extensions API goes here -->
 	 <script>
 
-
+'use strict';
 $(document).ready(function() {
 
   // Hook up an event handler for the load button click.
@@ -45,7 +45,7 @@ alert("click sucess");
       // Display the name of dashboard in the UI
       $("#resultBox").html("I'm running in a dashboard named <strong>" + dashboard.name + "</strong>");
 	  
-	  var worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
+	 // var worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
 
     
 	    
