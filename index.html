@@ -8091,6 +8091,18 @@ exports.Extensions = Extensions;
      <!-- Your JavaScript code that uses the Extensions API goes here -->
 
 	 <script >
+	 function kernelDensityEstimator(kernel, X) {
+  return function(V) {
+    return X.map(function(x) {
+      return [x, d3.mean(V, function(v) { return kernel(x - v); })];
+    });
+  };
+}
+function kernelEpanechnikov(k) {
+  return function(v) {
+    return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
+  };
+}
 	 $(document).ready(function() {
   // Hook up an event handler for the load button click.
   // Wait to initialize until the button is clicked.
@@ -8115,8 +8127,51 @@ alert("click sucess");
     });
 
     
-	    alert(worksheet);
+
 $("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name + "</strong>");
+
+ // get the summary data for the sheet
+ worksheet.getSummaryDataAsync().then(function (sumdata) {
+
+  const worksheetData = sumdata;
+  // The getSummaryDataAsync() method returns a DataTable
+  // Map the DataTable (worksheetData) into a format for display, etc.
+  
+  // add the x Axis
+  var x = d3.scaleLinear()
+            .domain([0, 1000])
+            .range([0, width]);
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // add the y Axis
+  var y = d3.scaleLinear()
+            .range([height, 0])
+            .domain([0, 0.01]);
+  svg.append("g")
+      .call(d3.axisLeft(y));
+
+  // Compute kernel density estimation
+  var kde = kernelDensityEstimator(kernelEpanechnikov(7), x.ticks(40))
+  var density =  kde( worksheetData.map(function(d){  return d.price; }) )
+
+  // Plot the area
+  svg.append("path")
+      .attr("class", "mypath")
+      .datum(density)
+      .attr("fill", "#69b3a2")
+      .attr("opacity", ".8")
+      .attr("stroke", "#000")
+      .attr("stroke-width", 1)
+      .attr("stroke-linejoin", "round")
+      .attr("d",  d3.line()
+        .curve(d3.curveBasis)
+          .x(function(d) { return x(d[0]); })
+          .y(function(d) { return y(d[1]); })
+      );
+
+ });
 	
 	// get the summary data for the sheet
 	
