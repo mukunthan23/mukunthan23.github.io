@@ -8122,12 +8122,17 @@ alert("click sucess");
 	     const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
 
     // Find a specific worksheet 
+
+
+        worksheets.forEach(function (worksheet) {
+    alert("worksheet "+worksheet);
+	alert("worksheet name "+worksheet.name);
+    });
+	
     var worksheet = worksheets.find(function (sheet) {
       return sheet.name === "Extension Testing";
     });
-
-    
-
+	
 $("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name + "</strong>");
 
  // get the summary data for the sheet
@@ -8142,8 +8147,7 @@ $("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name +
   
          for (var i=0; i < worksheetData.length; i++) {
             labels.push(worksheetData[i][0].formattedValue);
-            alert(worksheetData[i][1].value);
-		 data.push(worksheetData[i][1].value);
+            data.push(worksheetData[i][1].value);
          }
   
   // add the x Axis
