@@ -8124,10 +8124,7 @@ alert("click sucess");
     // Find a specific worksheet 
 
 
-        worksheets.forEach(function (worksheet) {
-    alert("worksheet "+worksheet);
-	alert("worksheet name "+worksheet.name);
-    });
+
 	
     var worksheet = worksheets.find(function (sheet) {
       return sheet.name === "Extension Testing";
@@ -8143,7 +8140,7 @@ $("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name +
   // Map the DataTable (worksheetData) into a format for display, etc.
   var labels = [];
          var data = [];
-         var worksheetData = sumdata.data;
+         var worksheetData = sumdata;
   
          for (var i=0; i < worksheetData.length; i++) {
             labels.push(worksheetData[i][0].formattedValue);
