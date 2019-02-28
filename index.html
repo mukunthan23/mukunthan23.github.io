@@ -8134,13 +8134,14 @@ $("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name +
 
  // get the summary data for the sheet
  worksheet.getSummaryDataAsync().then(function (sumdata) {
-
+alert("am inside datasync");
+	 alert(sumdata.data);
   //const worksheetData = sumdata;
   // The getSummaryDataAsync() method returns a DataTable
   // Map the DataTable (worksheetData) into a format for display, etc.
   var labels = [];
          var data = [];
-         var worksheetData = sumdata.getData();
+         var worksheetData = sumdata.data;
 	 alert("sumdata "+sumdata);
 	  alert("worksheetData "+worksheetData);
 		 alert("worksheetData len "+worksheetData.length);
