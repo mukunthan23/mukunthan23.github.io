@@ -14,7 +14,7 @@
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 	 
 	<!-- Load d3.js -->
-<script src="https://d3js.org/d3.v4.js"></script>
+	<script src="https://d3js.org/d3.v4.js"></script>
 
      <!-- Tableau Extensions API Library  -->
      <!-- library is in the /lib directory -->
@@ -31,13 +31,12 @@ $(document).ready(function() {
   $("#initializeButton").click(function() {
 	  
 
-alert("click sucess");
+    alert("click sucess");
     // Disable the button after it's been clicked
     $("#initializeButton").prop('disabled', true);
 
     tableau.extensions.initializeAsync().then(function() {
-	    
-	    alert("tableau function sucess");
+    alert("tableau function sucess");
 
       // Initialization succeeded! Get the dashboard
       var dashboard = tableau.extensions.dashboardContent.dashboard;
@@ -59,6 +58,7 @@ alert("click sucess");
       // something went wrong in initialization
       $("#resultBox").html("Error while Initializing: " + err.toString());
     });
+	   alert("after tableau fucntion");
   });
   
   
