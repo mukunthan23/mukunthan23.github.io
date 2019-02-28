@@ -8140,9 +8140,10 @@ $("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name +
   // Map the DataTable (worksheetData) into a format for display, etc.
   var labels = [];
          var data = [];
-         var worksheetData = sumdata;
+         var worksheetData = sumdata.getData();
 	 alert("sumdata "+sumdata);
-		 alert("worksheetData "+worksheetData.length);
+	  alert("worksheetData "+worksheetData);
+		 alert("worksheetData len "+worksheetData.length);
   
          for (var i=0; i < worksheetData.length; i++) {
 		 alert(worksheetData[i][0].formattedValue);
