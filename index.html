@@ -8092,18 +8092,7 @@ exports.Extensions = Extensions;
 
 	 <script >
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 90, left: 40},
-    width = 460 - margin.left - margin.right,
-    height = 450 - margin.top - margin.bottom;
 
-// append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
 	 $(document).ready(function() {
   // Hook up an event handler for the load button click.
   // Wait to initialize until the button is clicked.
@@ -8141,32 +8130,32 @@ $("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name +
   //const worksheetData = sumdata;
   // The getSummaryDataAsync() method returns a DataTable
   // Map the DataTable (worksheetData) into a format for display, etc.
-  var labels = [];
-         var data = [];
-         var worksheetData = sumdata.data;
-	 //alert("sumdata "+sumdata);
-	  //alert("worksheetData "+worksheetData);
-		// alert("worksheetData len "+worksheetData.length);
+var labels = [];
+var data = [];
+var worksheetData = sumdata.data;
+//alert("sumdata "+sumdata);
+//alert("worksheetData "+worksheetData);
+//alert("worksheetData len "+worksheetData.length);
   
-         for (var i=0; i < worksheetData.length; i++) {
-		 //alert(worksheetData[i][0].formattedValue);
-            labels.push(worksheetData[i][0].formattedValue);
-			
-			//alert(worksheetData[i][1].value);
-            data.push(worksheetData[i][1].value);
-         }
+	 for (var i=0; i < worksheetData.length; i++) {
+	 alert(worksheetData[i][0].formattedValue);
+		labels.push(worksheetData[i][0].formattedValue);
+		
+		alert(worksheetData[i][1].value);
+		data.push(worksheetData[i][1].value);
+	 }
   
-  var ctx = $("#my_dataviz");
-         var myChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-               labels: labels,
-               datasets: [{
-                  backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                  data: data
-               }]
-            }
-         });
+	var ctx = $("#my_dataviz");
+		 var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			data: {
+			   labels: labels,
+			   datasets: [{
+				  backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+				  data: data
+			   }]
+			}
+		 });
 
  
   /*
