@@ -8107,10 +8107,16 @@ alert("click sucess");
       // Display the name of dashboard in the UI
       $("#resultBox").html("I'm running in a dashboard named <strong>" + dashboard.name + "</strong>");
 	  
-	 // var worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
+	     const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
+
+    // Find a specific worksheet 
+    var worksheet = worksheets.find(function (sheet) {
+      return sheet.name === "Extension Testing";
+    });
+
     
 	    
-//$("#resultBox1").html("I'm running in a dashboard named <strong>" + worksheet.name + "</strong>");
+$("#resultBox1").html("I'm running in a dashboard named <strong>" + worksheet.name + "</strong>");
 	
 	// get the summary data for the sheet
 	
