@@ -8133,9 +8133,17 @@ $("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name +
  // get the summary data for the sheet
  worksheet.getSummaryDataAsync().then(function (sumdata) {
 
-  const worksheetData = sumdata;
+  //const worksheetData = sumdata;
   // The getSummaryDataAsync() method returns a DataTable
   // Map the DataTable (worksheetData) into a format for display, etc.
+  var labels = [];
+         var data = [];
+         var worksheetData = sumdata.data;
+  
+         for (var i=0; i < worksheetData.length; i++) {
+            labels.push(worksheetData[i][0].formattedValue);
+            data.push(worksheetData[i][1].value);
+         }
   
   // add the x Axis
   var x = d3.scaleLinear()
@@ -8154,7 +8162,7 @@ $("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name +
 
   // Compute kernel density estimation
   var kde = kernelDensityEstimator(kernelEpanechnikov(7), x.ticks(40))
-  var density =  kde( worksheetData.map(function(d){  return d.price; }) )
+  var density =  kde( data.map(function(d){  return d.price; }) )
 
   // Plot the area
   svg.append("path")
