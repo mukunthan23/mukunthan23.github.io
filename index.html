@@ -8143,7 +8143,10 @@ $("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name +
          var worksheetData = sumdata;
   
          for (var i=0; i < worksheetData.length; i++) {
+		 alert(worksheetData[i][0].formattedValue);
             labels.push(worksheetData[i][0].formattedValue);
+			
+			alert(worksheetData[i][1].value);
             data.push(worksheetData[i][1].value);
          }
   
