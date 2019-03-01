@@ -25,12 +25,38 @@ $(document).ready(function() {
 			//var data = [[],[]];
 			var jsonObj = [];
 			var worksheetData = sumdata.data;
+			var prev=worksheetData[i][0].value;
 
 			for (var i=0; i < worksheetData.length; i++) {
-			item = {}
-			item ["name"] = worksheetData[i][0].value;
-			item ["parent"] = worksheetData[i][1].value;
-			jsonObj.push(item);
+			
+				if(i==0)
+				{
+					item = {}
+					item ["name"] = worksheetData[i][1].value;
+					item ["parent"] = "Verbatim";
+					jsonObj.push(item);
+				}
+				if(prev==worksheetData[i][0].value)
+				{
+					item = {}
+					item ["name"] = worksheetData[i][1].value;
+					item ["parent"] = worksheetData[i][0].value;
+					jsonObj.push(item);
+				}
+				else
+				{
+					item = {}
+					item ["name"] = worksheetData[i][1].value;
+					item ["parent"] = "Verbatim";
+					jsonObj.push(item);
+					
+					item = {}
+					item ["name"] = worksheetData[i][1].value;
+					item ["parent"] = worksheetData[i][0].value;
+					jsonObj.push(item);
+					
+					prev=worksheetData[i][0].value;
+				}
 			}
 
 			$("#resultBox").html(JSON.stringify(jsonObj));
