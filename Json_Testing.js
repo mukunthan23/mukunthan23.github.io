@@ -31,6 +31,12 @@ $(document).ready(function() {
 			
 				if(i==0)
 				{
+					
+					item = {}
+					item ["name"] = "Verbatim";
+					item ["parent"] = "-";
+					jsonObj.push(item);
+					
 					item = {}
 					item ["name"] = worksheetData[i][0].value;
 					item ["parent"] = "Verbatim";
