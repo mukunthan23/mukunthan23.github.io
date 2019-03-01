@@ -30,8 +30,8 @@ $(document).ready(function() {
 			data.push(worksheetData[i][1].value);
 			}
 
-			//$("#resultBox").html(JSON.stringify(output));
-			console.log( JSON.stringify(output) );
+			$("#resultBox").html(JSON.stringify(data));
+			console.log( JSON.stringify(data) );
 		});
 
 	}, function(err) {
