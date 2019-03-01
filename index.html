@@ -12,9 +12,33 @@
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+		
+		 <style>
+	
+		.node {
+			cursor: pointer;
+		}
 
-		<!-- Load chart.js -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+		.node circle {
+		  fill: #fff;
+		  stroke: steelblue;
+		  stroke-width: 3px;
+		}
+
+		.node text {
+		  font: 12px sans-serif;
+		}
+
+		.link {
+		  fill: none;
+		  stroke: #ccc;
+		  stroke-width: 2px;
+		}
+
+	    </style>
+
+		<!-- Load d3.js -->
+		<script src="http://d3js.org/d3.v3.min.js"></script>
 
 		<!-- Tableau Extensions API Library  -->
 		<script src="./tableau-extensions-1.latest.js"></script>
