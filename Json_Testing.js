@@ -29,6 +29,9 @@ $(document).ready(function() {
 			labels.push(worksheetData[i][0].formattedValue);
 			data[0][i].push(worksheetData[i][0].value);
 			data[1].[i].push(worksheetData[i][1].value);
+			alert("Foramtted value "+worksheetData[i][0].formattedValue);
+			alert("worksheetdata value0 "+worksheetData[i][0].value);
+			alert("worksheetdata value1 "+worksheetData[i][1].value);
 			}
 
 			$("#resultBox").html(JSON.stringify(data));
