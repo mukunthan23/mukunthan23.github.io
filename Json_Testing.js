@@ -22,17 +22,16 @@ $(document).ready(function() {
 			// The getSummaryDataAsync() method returns a DataTable
 			// Map the DataTable (worksheetData) into a format for display, etc.
 			var labels = [];
-			var data = [];
+			var data = [[],[]];
 			var worksheetData = sumdata.data;
 
 			for (var i=0; i < worksheetData.length; i++) {
 			labels.push(worksheetData[i][0].formattedValue);
-			data.push(worksheetData[i][1].value);
-			//data[0][i].push(worksheetData[i][0].value);
-			//data[1].[i].push(worksheetData[i][1].value);
-			alert("Foramtted value "+worksheetData[i][0].formattedValue);
-			alert("worksheetdata value0 "+worksheetData[i][0].value);
-			alert("worksheetdata value1 "+worksheetData[i][1].value);
+			data[i][0].push(worksheetData[i][0].value);
+			data[i].[1].push(worksheetData[i][1].value);
+			//alert("Foramtted value "+worksheetData[i][0].formattedValue);
+			//alert("worksheetdata value0 "+worksheetData[i][0].value);
+			//alert("worksheetdata value1 "+worksheetData[i][1].value);
 			}
 
 			$("#resultBox").html(JSON.stringify(data));
