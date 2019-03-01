@@ -25,7 +25,7 @@ $(document).ready(function() {
 			//var data = [[],[]];
 			var jsonObj = [];
 			var worksheetData = sumdata.data;
-			var prev=worksheetData[i][0].value;
+			var prev=worksheetData[0][0].value;
 
 			for (var i=0; i < worksheetData.length; i++) {
 			
