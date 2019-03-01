@@ -69,12 +69,15 @@ $(document).ready(function() {
 			$("#resultBox").html(data1);
 			
 			alert("before data map");
-			
+			try {
 			var dataMap = data1.reduce(function(map, node) {
 			    map[node.name] = node;
 			    return map;
 			}, {});
-			
+			}
+			catch(err) {
+			 alert("error: "+err.message);
+			}
 			alert("after data map");
 
 			// create the tree array
