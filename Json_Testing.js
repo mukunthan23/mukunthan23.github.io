@@ -21,8 +21,7 @@ $(document).ready(function() {
 
 			// The getSummaryDataAsync() method returns a DataTable
 			// Map the DataTable (worksheetData) into a format for display, etc.
-			var labels = [];
-			//var data = [[],[]];
+
 			var jsonObj = [];
 			var worksheetData = sumdata.data;
 			var prev=worksheetData[0][0].value;
@@ -65,14 +64,17 @@ $(document).ready(function() {
 				}
 			}
 
-			$("#resultBox").html(JSON.stringify(jsonObj));
+			
 			var data = JSON.stringify(jsonObj);
+			$("#resultBox").html(data);
 			
 			
 			var dataMap = data.reduce(function(map, node) {
 			    map[node.name] = node;
 			    return map;
 			}, {});
+			
+			alert("after data map");
 
 			// create the tree array
 			var treeData = [];
