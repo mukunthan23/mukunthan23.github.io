@@ -20,7 +20,87 @@
      <!-- library is in the /lib directory -->
       <script src="./tableau-extensions-1.latest.js"></script>
    
-     
+     	 <script >
+// set the dimensions and margins of the graph
+
+	 $(document).ready(function() {
+  // Hook up an event handler for the load button click.
+  // Wait to initialize until the button is clicked.
+  
+  $("#initializeButton").click(function() {
+	  
+alert("click sucess");
+    // Disable the button after it's been clicked
+    $("#initializeButton").prop('disabled', true);
+    tableau.extensions.initializeAsync().then(function() {
+	    
+	    //alert("tableau function sucess");
+      // Initialization succeeded! Get the dashboard
+      var dashboard = tableau.extensions.dashboardContent.dashboard;
+      // Display the name of dashboard in the UI
+      $("#resultBox").html("I'm running in a dashboard named <strong>" + dashboard.name + "</strong>");
+	  
+	     const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
+
+    // Find a specific worksheet 
+
+
+
+	
+    var worksheet = worksheets.find(function (sheet) {
+      return sheet.name === "Extension Testing";
+    });
+	
+$("#resultBox1").html("I'm accesing worksheet named <strong>" + worksheet.name + "</strong>");
+
+ // get the summary data for the sheet
+  worksheet.getSummaryDataAsync().then(function (sumdata) {
+//alert("am inside datasync");
+//alert(sumdata.data);
+//const worksheetData = sumdata;
+// The getSummaryDataAsync() method returns a DataTable
+// Map the DataTable (worksheetData) into a format for display, etc.
+var labels = [];
+var data = [];
+var worksheetData = sumdata.data;
+//alert("sumdata "+sumdata);
+//alert("worksheetData "+worksheetData);
+//alert("worksheetData len "+worksheetData.length);
+  
+	 for (var i=0; i < worksheetData.length; i++) {
+	 alert(worksheetData[i][0].formattedValue);
+		labels.push(worksheetData[i][0].formattedValue);
+		
+		alert(worksheetData[i][1].value);
+		data.push(worksheetData[i][1].value);
+	 }
+  
+	var ctx = $("#myChart");
+		 var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			data: {
+			   labels: labels,
+			   datasets: [{
+				  backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+				  data: data
+			   }]
+			}
+		 });
+ });
+	
+	// get the summary data for the sheet
+	
+    }, function(err) {
+      // something went wrong in initialization
+      $("#resultBox").html("Error while Initializing: " + err.toString());
+    });
+	//alert("after tableau function");
+  });
+  
+  
+});
+	 
+	 </script>
      </head>
      <body>
        <div class="container">
