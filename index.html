@@ -8145,9 +8145,9 @@ var worksheetData = sumdata.data;
 		data.push(worksheetData[i][1].value);
 	 }
   
-	var ctx = $("#my_dataviz");
+	var ctx = $("#myChart");
 		 var myChart = new Chart(ctx, {
-			type: 'bar',
+			type: 'doughnut',
 			data: {
 			   labels: labels,
 			   datasets: [{
@@ -8181,10 +8181,9 @@ var worksheetData = sumdata.data;
 		    <p id="resultBox1" class="lead">Not Initialized</p>
            <button id="initializeButton" class="btn btn-primary">Initialize Extensions API</button>
          </div>
-       </div>
-	   <div >
-	   <p>chart here</p>
-	   <canvas id="my_dataviz" width="600" height="250"></canvas>
+       </div>	  
+	       <div class="wrapper">
+        <canvas id="myChart" width="600" height="250"></canvas>
 	   </div>
      </body>
  </html>
