@@ -219,7 +219,7 @@ $(document).ready(function() {
 			  update(d);
 			}
 						
-			
+			alert("d3 end");
 
 			
 		});
