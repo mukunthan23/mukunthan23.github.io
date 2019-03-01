@@ -33,8 +33,9 @@ $(document).ready(function() {
 			//alert("worksheetdata value0 "+worksheetData[i][0].value);
 			//alert("worksheetdata value1 "+worksheetData[i][1].value);
 			}
-
+			alert("data testing:"+data[1].[1]);
 			$("#resultBox").html(JSON.stringify(data));
+			
 			console.log( JSON.stringify(data) );
 		});
 
