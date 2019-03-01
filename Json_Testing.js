@@ -31,16 +31,16 @@ $(document).ready(function() {
 			//data[i][0].push(worksheetData[i][0].value);
 			//data[i].[1].push(worksheetData[i][1].value);
 			//alert("Foramtted value "+worksheetData[i][0].formattedValue);
-			alert("worksheetdata value0 "+worksheetData[i][0].value);
-			alert("worksheetdata value1 "+worksheetData[i][1].value);
+			//alert("worksheetdata value0 "+worksheetData[i][0].value);
+			//alert("worksheetdata value1 "+worksheetData[i][1].value);
 			item = {}
 			item ["name"] = worksheetData[i][0].value;
 			item ["parent"] = worksheetData[i][1].value;
 			jsonObj.push(item);
 			}
 
-			$("#resultBox").html(jsonObj);
-			//console.log( JSON.stringify(data) );
+			$("#resultBox").html(JSON.stringify(jsonObj));
+			
 		});
 
 	}, function(err) {
