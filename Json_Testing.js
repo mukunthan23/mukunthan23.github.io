@@ -32,7 +32,7 @@ $(document).ready(function() {
 				if(i==0)
 				{
 					item = {}
-					item ["name"] = worksheetData[i][1].value;
+					item ["name"] = worksheetData[i][0].value;
 					item ["parent"] = "Verbatim";
 					jsonObj.push(item);
 				}
