@@ -68,6 +68,7 @@ $(document).ready(function() {
 			var data = JSON.stringify(jsonObj);
 			$("#resultBox").html(data);
 			
+			alert("before data map");
 			
 			var dataMap = data.reduce(function(map, node) {
 			    map[node.name] = node;
