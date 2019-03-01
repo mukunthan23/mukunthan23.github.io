@@ -90,7 +90,8 @@ $(document).ready(function() {
 			    }
 			});
 
-
+			alert("after data tree");
+			
 			var margin = {top: 20, right: 120, bottom: 20, left: 120},
 			width = 960 - margin.right - margin.left,
 			height = 500 - margin.top - margin.bottom;
@@ -119,6 +120,7 @@ $(document).ready(function() {
 
 			d3.select(self.frameElement).style("height", "500px");
 
+			alert("after d3 append");
 			function update(source) {
 
 			  // Compute the new tree layout.
