@@ -65,12 +65,12 @@ $(document).ready(function() {
 			}
 
 			
-			var data1 = JSON.stringify(jsonObj);
-			$("#resultBox").html(data1);
+			var data = JSON.stringify(jsonObj);
+			$("#resultBox").html(data);
 			
 			alert("before data map");
 			try {
-			var dataMap = data1.reduce(function(map, node) {
+			var dataMap = data.reduce(function(map, node) {
 			    map[node.name] = node;
 			    return map;
 			}, {});
@@ -78,11 +78,11 @@ $(document).ready(function() {
 			catch(err) {
 			 alert("error: "+err.message);
 			}
-			alert("after data map");
+			
 
 			// create the tree array
 			var treeData = [];
-			data1.forEach(function(node) {
+			data.forEach(function(node) {
 			    // add to parent
 			    var parent = dataMap[node.parent];
 			    if (parent) {
