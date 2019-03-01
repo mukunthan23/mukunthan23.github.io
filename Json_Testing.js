@@ -28,11 +28,10 @@ $(document).ready(function() {
 			for (var i=0; i < worksheetData.length; i++) {
 			labels.push(worksheetData[i][0].formattedValue);
 			data.push(worksheetData[i][1].value);
-		        //alert(worksheetData[i][0].formattedValue);
-			//alert(worksheetData[i][1].value);
 			}
 
-			$("#resultBox").html(JSON.stringify(output));
+			//$("#resultBox").html(JSON.stringify(output));
+			console.log( JSON.stringify(output) );
 		});
 
 	}, function(err) {
