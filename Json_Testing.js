@@ -67,35 +67,34 @@ $(document).ready(function() {
 
 			$("#resultBox").html(JSON.stringify(jsonObj));
 			var data = JSON.stringify(jsonObj);
+			
+			
 			var dataMap = data.reduce(function(map, node) {
-			map[node.name] = node;
-			return map;
+			    map[node.name] = node;
+			    return map;
 			}, {});
 
 			// create the tree array
 			var treeData = [];
 			data.forEach(function(node) {
-				// add to parent
-				var parent = dataMap[node.parent];
-				if (parent) {
-					// create child array if it doesn't exist
-					(parent.children || (parent.children = []))
-						// add node to child array
-						.push(node);
-				} else {
-					// parent is null or missing
-					treeData.push(node);
-				}
+			    // add to parent
+			    var parent = dataMap[node.parent];
+			    if (parent) {
+				// create child array if it doesn't exist
+				(parent.children || (parent.children = []))
+				    // add node to child array
+				    .push(node);
+			    } else {
+				// parent is null or missing
+				treeData.push(node);
+			    }
 			});
 
 
-						
-						
-						
 			var margin = {top: 20, right: 120, bottom: 20, left: 120},
 			width = 960 - margin.right - margin.left,
 			height = 500 - margin.top - margin.bottom;
-				
+
 			var i = 0,
 				duration = 750,
 				root;
@@ -115,7 +114,7 @@ $(document).ready(function() {
 			root = treeData[0];
 			root.x0 = height / 2;
 			root.y0 = 0;
-			  
+
 			update(root);
 
 			d3.select(self.frameElement).style("height", "500px");
