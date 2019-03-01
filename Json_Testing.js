@@ -60,6 +60,7 @@ $(document).ready(function() {
 			}
 
 			$("#resultBox").html(JSON.stringify(jsonObj));
+			var data = JSON.stringify(jsonObj);
 			var dataMap = data.reduce(function(map, node) {
 			map[node.name] = node;
 			return map;
