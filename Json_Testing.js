@@ -46,7 +46,7 @@ $(document).ready(function() {
 				else
 				{
 					item = {}
-					item ["name"] = worksheetData[i][1].value;
+					item ["name"] = worksheetData[i][0].value;
 					item ["parent"] = "Verbatim";
 					jsonObj.push(item);
 					
