@@ -219,7 +219,8 @@ $(document).ready(function() {
 			  }
 			
 				alert(d.name)
-			var worksheet1 = worksheets.find(function (sheet) {
+			const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
+			var worksheet1 = worksheets1.find(function (sheet) {
 			return sheet.name === "Filter Testing";
 			});
 
