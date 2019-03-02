@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 			
 
-var data=
+var data1=
 [
 {"name":"Verbatim","parent":"-"},
 {"name":"Don't know or nothing","parent":"Verbatim"},
@@ -16,7 +16,8 @@ var data=
 {"name":"Agent","parent":"Staff"}
 ];
 
-	$("#resultBox").html(data);
+	var data = JSON.stringify(data1)
+	$("#resultBox").html(JSON.stringify(data1));
 	try{
 		
 var dataMap = data.reduce(function(map, node) {
