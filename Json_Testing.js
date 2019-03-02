@@ -15,7 +15,8 @@ $(document).ready(function() {
 		var worksheet = worksheets.find(function (sheet) {
 		return sheet.name === "Extension Testing";
 		});
-
+ 		worksheet.applyFilterAsync("Category 1", "Staff", tableau.FilterUpdateType.Replace);
+				}
 		// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
 
