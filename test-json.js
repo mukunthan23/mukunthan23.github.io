@@ -16,6 +16,7 @@ var data=
 {"name":"Agent","parent":"Staff"}
 ];
 
+	$("#resultBox").html(data);
 	try{
 		
 var dataMap = data.reduce(function(map, node) {
