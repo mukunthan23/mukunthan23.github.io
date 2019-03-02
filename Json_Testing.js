@@ -121,8 +121,6 @@ $(document).ready(function() {
 			update(root);
 
 			d3.select(self.frameElement).style("height", "500px");
-
-			alert("after d3 append");
 			function update(source) {
 
 			  // Compute the new tree layout.
