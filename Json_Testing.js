@@ -226,9 +226,10 @@ $(document).ready(function() {
 			var worksheet1 = worksheets1.find(function (sheet) {
 			return sheet.name === "Filter Testing";
 			});
-				//alert("work: "+ worksheet1.name);
+				
 				try{
-			  worksheet1.applyFilterAsync("Category 1", "Staff", tableau.FilterUpdateType.Replace);
+				alert("work: "+ worksheet1.name);
+			        worksheet1.applyFilterAsync("Category 1", "Staff", tableau.FilterUpdateType.Replace);
 				}
 				catch(err) {
 					  alert(err.message);
