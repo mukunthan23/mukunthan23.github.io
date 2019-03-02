@@ -16,11 +16,17 @@ var data=
 {"name":"Agent","parent":"Staff"}
 ];
 
+	try{
+		
 var dataMap = data.reduce(function(map, node) {
     map[node.name] = node;
     return map;
 }, {});
-
+	}
+	catch(err) {
+			 alert("error: "+err.message);
+			}
+	
 // create the tree array
 var treeData = [];
 data.forEach(function(node) {
