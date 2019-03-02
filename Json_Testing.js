@@ -66,18 +66,16 @@ $(document).ready(function() {
 
 			
 			var data = (jsonObj);
-			$("#resultBox").html(JSON.stringify(jsonObj));
+			//$("#resultBox").html(JSON.stringify(jsonObj));
 			
-			alert("before data map");
-			try {
+			
+
 			var dataMap = data.reduce(function(map, node) {
 			    map[node.name] = node;
 			    return map;
 			}, {});
-			}
-			catch(err) {
-			 alert("error: "+err.message);
-			}
+			
+			
 			
 
 			// create the tree array
@@ -95,8 +93,6 @@ $(document).ready(function() {
 				treeData.push(node);
 			    }
 			});
-
-			alert("after data tree");
 			
 			var margin = {top: 20, right: 120, bottom: 20, left: 120},
 			width = 960 - margin.right - margin.left,
@@ -225,10 +221,7 @@ $(document).ready(function() {
 			  }
 			  update(d);
 			}
-						
-			alert("d3 end");
-
-			
+									
 		});
 
 	}, function(err) {
