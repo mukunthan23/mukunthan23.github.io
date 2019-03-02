@@ -217,13 +217,15 @@ $(document).ready(function() {
 				d.children = d._children;
 				d._children = null;
 			  }
-			  update(d);
+			
+				alert(d.name)
 			var worksheet1 = worksheets.find(function (sheet) {
 			return sheet.name === "Filter Testing";
 			});
 
 			  worksheet1.applyFilterAsync("Category 1", d.name,
 				tableau.FilterUpdateType.REPLACE);
+				  update(d);
 			}
 									
 		});
