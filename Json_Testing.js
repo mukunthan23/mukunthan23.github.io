@@ -218,6 +218,12 @@ $(document).ready(function() {
 				d._children = null;
 			  }
 			  update(d);
+			var worksheet1 = worksheets.find(function (sheet) {
+			return sheet.name === "Filter Testing";
+			});
+
+			  worksheet1.applyFilterAsync("Category 1", d.name,
+				tableau.FilterUpdateType.REPLACE);
 			}
 									
 		});
