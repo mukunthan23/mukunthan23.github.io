@@ -65,8 +65,8 @@ $(document).ready(function() {
 			}
 
 			
-			var data = JSON.stringify(jsonObj);
-			$("#resultBox").html(data);
+			var data = (jsonObj);
+			$("#resultBox").html(JSON.stringify(jsonObj));
 			
 			alert("before data map");
 			try {
