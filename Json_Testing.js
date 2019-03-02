@@ -229,7 +229,7 @@ $(document).ready(function() {
 				
 				try{
 				alert("work: "+ worksheet1.name);
-				worksheet.clearFilterAsync("Category 1")
+				worksheet1.clearFilterAsync("Category 1")
 			        worksheet1.applyFilterAsync("Category 1", "Staff", tableau.FilterUpdateType.Replace);
 				}
 				catch(err) {
