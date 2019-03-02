@@ -227,8 +227,7 @@ $(document).ready(function() {
 			return sheet.name === "Filter Testing";
 			});
 				alert("work: "+ worksheet1.name);
-	
-			  worksheet1.applyFilterAsync("[Category 1]", d.name, tableau.FilterUpdateType.Replace);
+			  worksheet1.applyFilterAsync("Category 1", d.name, tableau.FilterUpdateType.Replace);
 				  update(d);
 			}
 									
