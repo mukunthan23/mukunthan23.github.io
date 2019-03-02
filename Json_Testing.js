@@ -219,11 +219,15 @@ $(document).ready(function() {
 			  }
 			
 				alert(d.name)
+			var dashboard1 = tableau.extensions.dashboardContent.dashboard;
+				alert("dash: "+ dashboard1.name);
 			const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
+				
 			var worksheet1 = worksheets1.find(function (sheet) {
 			return sheet.name === "Filter Testing";
 			});
-
+				alert("work: "+ worksheet1.name);
+				
 			  worksheet1.applyFilterAsync("Category 1", d.name,
 				tableau.FilterUpdateType.REPLACE);
 				  update(d);
