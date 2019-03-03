@@ -15,11 +15,10 @@ $(document).ready(function() {
 		var worksheet = worksheets.find(function (sheet) {
 		return sheet.name === "Extension Testing";
 		});
-		.then(function () {
-			  return worksheet.applyFilterAsync("Category 1", "Staff", tableau.FilterUpdateType.Replace);
-			})
- 		
-				}
+		worksheet.applyFilterAsync("Category 1", "Staff", tableau.FilterUpdateType.Replace).then(function(foo) {
+		   done();
+		  },errorHandler);
+
 		// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
 
