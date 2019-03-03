@@ -15,9 +15,9 @@ $(document).ready(function() {
 		var worksheet = worksheets.find(function (sheet) {
 		return sheet.name === "Extension Testing";
 		});
-		worksheet.applyFilterAsync("Category 1", "Staff", tableau.FilterUpdateType.Replace).then(function(foo) {
+		/*worksheet.applyFilterAsync("Category 1", "Staff", tableau.FilterUpdateType.Replace).then(function(foo) {
 		   done();
-		  },errorHandler);
+		  },errorHandler);*/
 
 		// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
@@ -70,16 +70,11 @@ $(document).ready(function() {
 			
 			var data = (jsonObj);
 			//$("#resultBox").html(JSON.stringify(jsonObj));
-			
-			
-
 			var dataMap = data.reduce(function(map, node) {
 			    map[node.name] = node;
 			    return map;
 			}, {});
-			
-			
-			
+
 
 			// create the tree array
 			var treeData = [];
