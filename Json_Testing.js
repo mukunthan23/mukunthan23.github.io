@@ -254,7 +254,7 @@ $(document).ready(function() {
 				var fieldname="Category 1";
 				var fieldvalue=d.name;
 				//worksheet1.clearFilterAsync(fieldname);
-				worksheet1.applyFilterAsync("Category 1","Staff",tableau.FilterUpdateType.REPLACE);
+				worksheet1.applyFilterAsync("Category 1","Staff",tableau.FilterUpdateType.Replace);
 				}
 				catch(err) {
 					  alert(err.message);
