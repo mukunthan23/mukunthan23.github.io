@@ -227,8 +227,9 @@ $(document).ready(function() {
 				
 				try{
 				alert("work: "+ worksheet1.name);
-				worksheet1.clearFilterAsync("Category 1")
-			        worksheet1.applyFilterAsync("Category 1", "Staff", tableau.FilterUpdateType.REPLACE);
+				var fieldname="Category 1";
+				worksheet1.clearFilterAsync(fieldname);
+			        worksheet1.applyFilterAsync(fieldname,d.name, tableau.FilterUpdateType.REPLACE);
 				}
 				catch(err) {
 					  alert(err.message);
