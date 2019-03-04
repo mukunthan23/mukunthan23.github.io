@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 // Hook up an event handler for the load button click.
 // Wait to initialize until the button is clicked.
@@ -15,9 +14,6 @@ $(document).ready(function() {
 		var worksheet = worksheets.find(function (sheet) {
 		return sheet.name === "Extension Testing";
 		});
-		/*worksheet.applyFilterAsync("Category 1", "Staff", tableau.FilterUpdateType.Replace).then(function(foo) {
-		   done();
-		  },errorHandler);*/
 
 		// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
@@ -136,7 +132,24 @@ $(document).ready(function() {
 			  var nodeEnter = node.enter().append("g")
 				  .attr("class", "node")
 				  .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-				  .on("click", click);
+				  //.on("click", click);
+				  .on("click", function(d) {
+		  //on first click, hide explainer div
+		  //document.getElementById("intro").style.display = "none";
+
+		  //expand if clicked node is not root & not selected
+		  //todo: set filter on parents where one bureau exists in multiple agencies
+		  if(d.depth==1 && d!=selected){ 
+			toggle(selected);
+			toggle(d); 
+			update(d); 
+			//tabfilter(d); 
+		  } else {
+		  	//tabfilter(d);
+			colored=d;
+			update(d);
+		  }
+		});
 
 			  nodeEnter.append("circle")
 				  .attr("r", 1e-6)
