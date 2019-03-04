@@ -385,7 +385,9 @@ var ErrorHelpers = /** @class */ (function () {
         var isValid = false;
         Object.keys(enumType).forEach(function (enumKey) {
 			//alert("String(enumValue): "+String(enumValue))
-			alert("enumValue "+enumValue)
+			//alert("enumValue "+enumValue)
+			alert("enumKey "+enumType[enumKey])
+			
 			alert("enumValue.toString(): "+enumValue.toString())
 			
 			//if (enumType[enumKey] === String(enumValue)) {
