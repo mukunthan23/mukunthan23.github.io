@@ -384,7 +384,8 @@ var ErrorHelpers = /** @class */ (function () {
     ErrorHelpers.verifyEnumValue = function (enumValue, enumType) {
         var isValid = false;
         Object.keys(enumType).forEach(function (enumKey) {
-			if (enumType[enumKey] === enumValue.toString()) {
+			if (enumType[enumKey] === String(enumValue)) {
+			//if (enumType[enumKey] === enumValue.toString()) {
             //if (enumType[enumKey] === enumValue) {
                 isValid = true;
             }
