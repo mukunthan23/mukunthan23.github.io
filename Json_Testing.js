@@ -229,7 +229,7 @@ $(document).ready(function() {
 				alert("work: "+ worksheet1.name);
 				var fieldname="Category 1";
 				var fieldvalue=d.name;
-				worksheet1.clearFilterAsync(fieldname);
+				//worksheet1.clearFilterAsync(fieldname);
 				worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.REPLACE);
 				}
 				catch(err) {
