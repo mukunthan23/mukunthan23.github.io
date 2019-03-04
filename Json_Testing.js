@@ -111,7 +111,18 @@ $(document).ready(function() {
 			root = treeData[0];
 			root.x0 = height / 2;
 			root.y0 = 0;
+			function toggleAll(d) {
+				if (d.children) {
+					d.children.forEach(toggleAll);
+					click(d);
+				}
+			}
 
+			  // Initialize the display to show a few nodes.
+			root.children.forEach(toggleAll);
+			selected = root.name[0];
+			colored = selected;
+			click(selected);
 			update(root);
 
 			d3.select(self.frameElement).style("height", "500px");
@@ -140,8 +151,8 @@ $(document).ready(function() {
 		  //expand if clicked node is not root & not selected
 		  //todo: set filter on parents where one bureau exists in multiple agencies
 		  if(d.depth==1 && d!=selected){ 
-			toggle(selected);
-			toggle(d); 
+			click(selected);
+			click(d); 
 			update(d); 
 			//tabfilter(d); 
 		  } else {
