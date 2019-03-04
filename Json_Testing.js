@@ -230,7 +230,7 @@ $(document).ready(function() {
 				var fieldname="Category 1";
 				var fieldvalue=d.name;
 				//worksheet1.clearFilterAsync(fieldname);
-				worksheet1.applyFilterAsync("Category 1","Staff",tableau.SelectionUpdateType.REPLA);
+				worksheet1.applyFilterAsync("Category 1","Staff",tableau.SelectionUpdateType.REPLACE);
 				}
 				catch(err) {
 					  alert(err.message);
