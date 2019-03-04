@@ -253,8 +253,8 @@ $(document).ready(function() {
 				//alert("work: "+ worksheet1.name);
 				var fieldname="Category 1";
 				var fieldvalue=d.name;
-				//worksheet1.clearFilterAsync(fieldname);
-				//worksheet1.applyFilterAsync("Category 1","Staff",tableau.FilterUpdateType.Replace);
+				worksheet1.clearFilterAsync(fieldname);
+				worksheet1.applyFilterAsync("Category 1","Staff",tableau.FilterUpdateType.Replace);
 				}
 				catch(err) {
 					  alert(err.message);
