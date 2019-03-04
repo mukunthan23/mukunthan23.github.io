@@ -226,7 +226,7 @@ $(document).ready(function() {
 			});
 				
 				try{
-				alert("work: "+ worksheet1.name);
+				//alert("work: "+ worksheet1.name);
 				var fieldname="Category 1";
 				var fieldvalue=d.name;
 				//worksheet1.clearFilterAsync(fieldname);
