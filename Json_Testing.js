@@ -228,8 +228,9 @@ $(document).ready(function() {
 				try{
 				alert("work: "+ worksheet1.name);
 				var fieldname="Category 1";
+				var fieldvalue=d.name;
 				worksheet1.clearFilterAsync(fieldname);
-			        worksheet1.applyFilterAsync(fieldname,d.name, tableau.FilterUpdateType.REPLACE);
+				worksheet1.applyFIlterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.REPLACE);
 				}
 				catch(err) {
 					  alert(err.message);
