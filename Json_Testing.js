@@ -230,7 +230,7 @@ $(document).ready(function() {
 				var fieldname="Category 1";
 				var fieldvalue=d.name;
 				//worksheet1.clearFilterAsync(fieldname);
-				worksheet1.applyFilterAsync(fieldname.toString(),fieldvalue.toString(),tableau.FilterUpdateType.REMOVE);
+				worksheet1.selectMarksAsync(fieldname.toString(),fieldvalue.toString(),tableau.FilterUpdateType.REMOVE);
 				}
 				catch(err) {
 					  alert(err.message);
