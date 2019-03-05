@@ -208,6 +208,7 @@ function dataload(worksheet)
 				  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
 				  .attr("dy", ".35em")
 				  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+				  .attr("font-size",function(d) { return d.depth==0?"14px":"11px"})
 				  .text(function(d) { return d.name; })
 				  .style("fill-opacity", 1e-6);
 
