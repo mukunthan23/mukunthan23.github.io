@@ -1,4 +1,5 @@
 var count=1;
+var clickcount=0;
 var filterflag = 0;
 $(document).ready(function() {
 // Hook up an event handler for the load button click.
@@ -186,6 +187,7 @@ function dataload(worksheet)
 			click(d); 
 			update(d); 
 		  } else {
+			 clickcount=1; 
 			colored=d;
 			update(d);
 		  }
@@ -271,8 +273,9 @@ function dataload(worksheet)
 				d._children = null;
 			  }
 			  
-			if(filterflag==0 && count >1)
+			if(filterflag==0 && clickcount==1)
 				{
+					clickcount=0;
 						//alert(d.name)
 					var dashboard1 = tableau.extensions.dashboardContent.dashboard;
 						//alert("dash: "+ dashboard1.name);
