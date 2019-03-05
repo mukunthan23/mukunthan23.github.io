@@ -183,11 +183,12 @@ function dataload(worksheet)
 		  //expand if clicked node is not root & not selected
 		  //todo: set filter on parents where one bureau exists in multiple agencies
 		  if(d.depth==1 && d!=selected){ 
+		   clickcount=1; 
 			click(selected);
 			click(d); 
 			update(d); 
 		  } else {
-			 clickcount=1; 
+			
 			colored=d;
 			update(d);
 		  }
