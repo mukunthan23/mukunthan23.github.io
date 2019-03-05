@@ -13,15 +13,15 @@ $(document).ready(function() {
 		const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
 		//const worksheets = tableau.extensions.dashboardContent.worksheets;
 		
-		var worksheet = worksheets.forEach(function (sheet) {
+		/*var worksheet = worksheets.forEach(function (sheet) {
 			alert(sheet.name);
 			return sheet.name === "Extension Testing";
-    });
+    });*/
 
-		/*// Find a specific worksheet 
+		// Find a specific worksheet 
 		var worksheet = worksheets.find(function (sheet) {
 		return sheet.name === "Extension Testing";
-		});*/
+		});
 
 		
 		dataload(worksheet);
