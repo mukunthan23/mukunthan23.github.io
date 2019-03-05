@@ -271,7 +271,7 @@ function dataload(worksheet)
 				d._children = null;
 			  }
 			  
-			if(filterflag==0 and count >1)
+			if(filterflag==0 && count >1)
 				{
 						//alert(d.name)
 					var dashboard1 = tableau.extensions.dashboardContent.dashboard;
@@ -292,9 +292,8 @@ function dataload(worksheet)
 						catch(err) {
 							  alert(err.message);
 							}
-						  
+						  update(d);
 				}
-				update(d);
 			}
 									
 		});
