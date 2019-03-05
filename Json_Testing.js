@@ -180,12 +180,11 @@ function dataload(worksheet)
 		  if(d.depth==1 && d!=selected){ 
 			//click(selected);
 			click(d); 
-			update(d); 
+			//update(d); 
 			//tabfilter(d); 
 		  } else {
 		  	//tabfilter(d);
 			colored=d;
-			 click(d);
 			update(d);
 		  }
 		});
