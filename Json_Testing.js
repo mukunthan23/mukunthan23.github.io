@@ -273,7 +273,7 @@ function dataload(worksheet)
 			  }
 			
 			
-			if( count > 1 and filterflag==0)	
+			/*if( count > 1 and filterflag==0)	
 			
 				{
 					var dashboard1 = tableau.extensions.dashboardContent.dashboard;
@@ -296,7 +296,7 @@ function dataload(worksheet)
 							}
 							update(d);
 					  
-				}
+				}*/
 			
 			}
 				
