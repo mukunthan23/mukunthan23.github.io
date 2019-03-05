@@ -11,12 +11,17 @@ $(document).ready(function() {
 		var dashboard = tableau.extensions.dashboardContent.dashboard;
 		// Display the name of dashboard in the UI
 		//const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
-		const worksheets = tableau.extensions.dashboardContent.worksheets;
+		//const worksheets = tableau.extensions.dashboardContent.worksheets;
+		
+		var worksheet = dashboard.worksheets.forEach(function (sheet) {
+			
+			return sheet.name === "Extension Testing";
+    });
 
-		// Find a specific worksheet 
+		/*// Find a specific worksheet 
 		var worksheet = worksheets.find(function (sheet) {
 		return sheet.name === "Extension Testing";
-		});
+		});*/
 
 		
 		dataload(worksheet);
