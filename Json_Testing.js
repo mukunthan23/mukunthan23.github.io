@@ -15,8 +15,27 @@ $(document).ready(function() {
 		return sheet.name === "Extension Testing";
 		});
 
-		// get the summary data for the sheet
-		dataload=worksheet.getSummaryDataAsync().then(function (sumdata) {
+		
+		dataload(worksheet);
+
+		unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterChangedHandler) {
+		alert("filter changed");
+		dataload(worksheet);
+		});
+
+		// remove the event listener when done
+		// unregisterEventHandlerFunction();
+		
+	}, function(err) {
+	// something went wrong in initialization
+	$("#resultBox").html("Error while Initializing: " + err.toString());
+	});
+});
+
+function dataload(worksheet)
+{
+	// get the summary data for the sheet
+		worksheet.getSummaryDataAsync().then(function (sumdata) {
 
 			// The getSummaryDataAsync() method returns a DataTable
 			// Map the DataTable (worksheetData) into a format for display, etc.
@@ -263,25 +282,4 @@ $(document).ready(function() {
 			}
 									
 		});
-		
-		
-		//const filterchanged = tableau.TableauEventType.FilterChanged;
-		//
-		unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterChangedHandler) {
-		// When the selection changes, reload the data
-		//loadSelectedMarks(worksheetName);
-		alert("filter changed");
-		dataload();
-		});
-
-		// remove the event listener when done
-		// unregisterEventHandlerFunction();
-		 
-		//let unregisterHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, filterChangedHandler);
-		//unregisterHandlerFunctions.push(unregisterHandlerFunction);
-
-	}, function(err) {
-	// something went wrong in initialization
-	$("#resultBox").html("Error while Initializing: " + err.toString());
-	});
-});
+}
