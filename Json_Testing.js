@@ -265,16 +265,19 @@ $(document).ready(function() {
 		});
 		
 		
-		const filterchanged = tableau.TableauEventType.FilterChanged;
+		//const filterchanged = tableau.TableauEventType.FilterChanged;
 		//
-		unregisterEventHandlerFunction = worksheet.addEventListener(filterchanged, function (filterChangedHandler) {
+		unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterChangedHandler) {
 		// When the selection changes, reload the data
 		//loadSelectedMarks(worksheetName);
 		alert("filter changed");
 		});
 
 		// remove the event listener when done
-		 unregisterEventHandlerFunction();
+		// unregisterEventHandlerFunction();
+		 
+		//let unregisterHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, filterChangedHandler);
+		//unregisterHandlerFunctions.push(unregisterHandlerFunction);
 
 	}, function(err) {
 	// something went wrong in initialization
