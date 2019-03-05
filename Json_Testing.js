@@ -16,7 +16,7 @@ $(document).ready(function() {
 		});
 
 		// get the summary data for the sheet
-		worksheet.getSummaryDataAsync().then(function (sumdata) {
+		dataload=worksheet.getSummaryDataAsync().then(function (sumdata) {
 
 			// The getSummaryDataAsync() method returns a DataTable
 			// Map the DataTable (worksheetData) into a format for display, etc.
@@ -271,6 +271,7 @@ $(document).ready(function() {
 		// When the selection changes, reload the data
 		//loadSelectedMarks(worksheetName);
 		alert("filter changed");
+		dataload();
 		});
 
 		// remove the event listener when done
