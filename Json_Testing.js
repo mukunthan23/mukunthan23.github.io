@@ -296,10 +296,11 @@ function dataload(worksheet)
 						var parameter;
 						tableau.extensions.dashboardContent.dashboard.getParametersAsync().then(params => {
 						parameter = params.find(param => param.name === "Test_Param");
-        
-						});
 						alert(parameter.name);
 						 parameter.changeValueAsync(fieldvalue);
+        
+						});
+						
 					}
 						catch(err) 
 						{
