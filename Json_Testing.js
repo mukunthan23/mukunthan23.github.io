@@ -263,6 +263,18 @@ $(document).ready(function() {
 			}
 									
 		});
+		
+		
+		const filterchanged = tableau.TableauEventType.FilterChanged;
+		//
+		unregisterEventHandlerFunction = worksheet.addEventListener(filterchanged, function (filterChangedHandler) {
+		// When the selection changes, reload the data
+		//loadSelectedMarks(worksheetName);
+		alert("filter changed");
+		});
+
+		// remove the event listener when done
+		 unregisterEventHandlerFunction();
 
 	}, function(err) {
 	// something went wrong in initialization
