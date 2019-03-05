@@ -1,3 +1,4 @@
+var count=1;
 $(document).ready(function() {
 // Hook up an event handler for the load button click.
 // Wait to initialize until the button is clicked.
@@ -19,7 +20,7 @@ $(document).ready(function() {
 		dataload(worksheet);
 
 		unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterChangedHandler) {
-		alert("filter changed");
+		//alert("filter changed");
 		dataload(worksheet);
 		});
 
@@ -34,7 +35,12 @@ $(document).ready(function() {
 
 function dataload(worksheet)
 {
-	alert("am here");
+	
+	if(count>1)
+	{
+		d3.select("#TreeGraph").remove();
+	}
+	count++;
 	// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
 
@@ -122,10 +128,11 @@ function dataload(worksheet)
 			var diagonal = d3.svg.diagonal()
 				.projection(function(d) { return [d.y, d.x]; });
 
-			var svg = d3.select("TreeGraph")
+			var svg = d3.select("body").append("svg")
+			    .attr("id","TreeGraph")
 				.attr("width", width + margin.right + margin.left)
 				.attr("height", height + margin.top + margin.bottom)
-			  .append("g")
+			    .append("g")
 				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 			root = treeData[0];
