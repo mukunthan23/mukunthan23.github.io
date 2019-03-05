@@ -294,9 +294,10 @@ function dataload(worksheet)
 						catch(err) {
 							  alert(err.message);
 							}
+							update(d);
 					  
 				}
-			update(d);
+			
 			}
 				
 				count++;					
