@@ -270,27 +270,30 @@ function dataload(worksheet)
 				d.children = d._children;
 				d._children = null;
 			  }
-			
-				//alert(d.name)
-			var dashboard1 = tableau.extensions.dashboardContent.dashboard;
-				//alert("dash: "+ dashboard1.name);
-			const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
-				
-			var worksheet1 = worksheets1.find(function (sheet) {
-			return sheet.name === "Filter Testing";
-			});
-				
-				try{
-				alert("work: "+ worksheet1.name);
-				var fieldname="Category 1";
-				var fieldvalue=d.name;
-				//worksheet1.clearFilterAsync(fieldname);
-				//worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.Replace);
+			  
+			if(filterflag==0 and count >1)
+				{
+						//alert(d.name)
+					var dashboard1 = tableau.extensions.dashboardContent.dashboard;
+						//alert("dash: "+ dashboard1.name);
+					const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
+						
+					var worksheet1 = worksheets1.find(function (sheet) {
+					return sheet.name === "Filter Testing";
+					});
+						
+						try{
+						alert("work: "+ worksheet1.name);
+						var fieldname="Category 1";
+						var fieldvalue=d.name;
+						//worksheet1.clearFilterAsync(fieldname);
+						//worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.Replace);
+						}
+						catch(err) {
+							  alert(err.message);
+							}
+						  update(d);
 				}
-				catch(err) {
-					  alert(err.message);
-					}
-				  update(d);
 			}
 									
 		});
