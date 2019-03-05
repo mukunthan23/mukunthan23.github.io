@@ -185,10 +185,11 @@ function dataload(worksheet)
 		  if(d.depth==1 && d!=selected){ 
 		   
 			click(selected);
+			 clickcount=1; 
 			click(d); 
 			update(d); 
 		  } else {
-			clickcount=1; 
+			
 			colored=d;
 			update(d);
 		  }
