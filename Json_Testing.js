@@ -306,7 +306,7 @@ function dataload(worksheet)
 						{
 							  alert(err.message);
 						}
-						  update(d);
+						 // update(d);
 				}
 			}
 									
