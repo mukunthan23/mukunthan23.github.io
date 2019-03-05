@@ -1,4 +1,5 @@
 var count=1;
+var filterflag = 0;
 $(document).ready(function() {
 // Hook up an event handler for the load button click.
 // Wait to initialize until the button is clicked.
@@ -21,7 +22,10 @@ $(document).ready(function() {
 
 		unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterChangedHandler) {
 		//alert("filter changed");
+		filterflag=1;
 		dataload(worksheet);
+		filterflag=0;
+		
 		});
 
 		// remove the event listener when done
@@ -36,7 +40,7 @@ $(document).ready(function() {
 function dataload(worksheet)
 {
 	
-	if(count>1)
+	if(filterflag==1)
 	{
 		d3.select("#TreeGraph").remove();
 	}
@@ -269,7 +273,7 @@ function dataload(worksheet)
 			  }
 			
 			
-			if( count > 1)	
+			if( count > 1 and filterflag==0)	
 			
 				{
 					var dashboard1 = tableau.extensions.dashboardContent.dashboard;
