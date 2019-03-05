@@ -10,11 +10,11 @@ $(document).ready(function() {
 		// Initialization succeeded! Get the dashboard
 		var dashboard = tableau.extensions.dashboardContent.dashboard;
 		// Display the name of dashboard in the UI
-		//const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
+		const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
 		//const worksheets = tableau.extensions.dashboardContent.worksheets;
 		
-		var worksheet = dashboard.worksheets.forEach(function (sheet) {
-			
+		var worksheet = worksheets.forEach(function (sheet) {
+			alert(sheet.name);
 			return sheet.name === "Extension Testing";
     });
 
