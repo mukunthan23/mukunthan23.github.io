@@ -138,6 +138,7 @@ function dataload(worksheet)
 			root = treeData[0];
 			root.x0 = height / 2;
 			root.y0 = 0;
+			
 			function toggleAll(d) {
 				if (d.children) {
 					d.children.forEach(toggleAll);
@@ -152,7 +153,7 @@ function dataload(worksheet)
 			click(selected);
 			update(root);
 
-			d3.select(self.frameElement).style("height", "500px");
+			//d3.select(self.frameElement).style("height", "500px");
 			function update(source) {
 
 			  // Compute the new tree layout.
@@ -178,12 +179,10 @@ function dataload(worksheet)
 		  //expand if clicked node is not root & not selected
 		  //todo: set filter on parents where one bureau exists in multiple agencies
 		  if(d.depth==1 && d!=selected){ 
-			//click(selected);
+			click(selected);
 			click(d); 
-			//update(d); 
-			//tabfilter(d); 
+			update(d); 
 		  } else {
-		  	//tabfilter(d);
 			colored=d;
 			update(d);
 		  }
@@ -259,6 +258,8 @@ function dataload(worksheet)
 
 			// Toggle children on click.
 			function click(d) {
+				  selected = d;
+				  colored = selected;
 			  if (d.children) {
 				d._children = d.children;
 				d.children = null;
