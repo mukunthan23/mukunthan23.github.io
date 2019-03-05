@@ -277,21 +277,25 @@ function dataload(worksheet)
 			if(filterflag==0 && clickcount==1)
 				{
 					clickcount=0;
-						//alert(d.name)
+
+					try{	
+					var fieldname="Category 1";
+					var fieldvalue=d.name;
 					var dashboard1 = tableau.extensions.dashboardContent.dashboard;
-						//alert("dash: "+ dashboard1.name);
+						
 					const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
 						
 					var worksheet1 = worksheets1.find(function (sheet) {
 					return sheet.name === "Filter Testing";
+					}).then(function () {
+					return 	worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.REPLACE);
 					});
 						
-						try{
-						alert("work: "+ worksheet1.name);
-						var fieldname="Category 1";
-						var fieldvalue=d.name;
+						
+						//alert("work: "+ worksheet1.name);
+						
 						//worksheet1.clearFilterAsync(fieldname);
-						//worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.Replace);
+						//worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.REPLACE);
 						}
 						catch(err) {
 							  alert(err.message);
