@@ -10,8 +10,8 @@ $(document).ready(function() {
 		// Initialization succeeded! Get the dashboard
 		var dashboard = tableau.extensions.dashboardContent.dashboard;
 		// Display the name of dashboard in the UI
-
-		const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
+		//const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
+		const worksheets = tableau.extensions.dashboardContent.worksheets;
 
 		// Find a specific worksheet 
 		var worksheet = worksheets.find(function (sheet) {
