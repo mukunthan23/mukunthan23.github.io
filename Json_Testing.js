@@ -34,6 +34,7 @@ $(document).ready(function() {
 
 function dataload(worksheet)
 {
+	alert("am here");
 	// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
 
