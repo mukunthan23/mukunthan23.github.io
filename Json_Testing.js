@@ -281,18 +281,25 @@ function dataload(worksheet)
 					try{	
 						var fieldname="Category 1";
 						var fieldvalue=d.name;
-						var dashboard1 = tableau.extensions.dashboardContent.dashboard;
+						//var dashboard1 = tableau.extensions.dashboardContent.dashboard;
 							
-						const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
+						//const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
 							
-						var worksheet1 = worksheets1.find(function (sheet) {
+						/*var worksheet1 = worksheets1.find(function (sheet) {
 						return sheet.name === "Filter Testing";
-						});
+						});*/
 
 						//alert("work: "+ worksheet1.name);
 						
 						//worksheet1.clearFilterAsync(fieldname);
-						worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.ADD);
+						//worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.REPLACE);
+						var parameter;
+						tableau.extensions.dashboardContent.dashboard.getParametersAsync().then(params => {
+						parameter = params.find(param => param.name === tableau.extensions.settings.get('Test_Param'));
+        
+						});
+						alert(parameter.name);
+						 parameter.changeValueAsync(fieldvalue);
 					}
 						catch(err) 
 						{
