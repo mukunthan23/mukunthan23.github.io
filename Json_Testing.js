@@ -292,7 +292,7 @@ function dataload(worksheet)
 						//alert("work: "+ worksheet1.name);
 						
 						//worksheet1.clearFilterAsync(fieldname);
-						worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.REPLACE);
+						worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.ADD);
 					}
 						catch(err) 
 						{
