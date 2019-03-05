@@ -40,7 +40,7 @@ function dataload(worksheet)
 	{
 		d3.select("#TreeGraph").remove();
 	}
-	count++;
+
 	// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
 
@@ -268,27 +268,34 @@ function dataload(worksheet)
 				d._children = null;
 			  }
 			
-				//alert(d.name)
-			var dashboard1 = tableau.extensions.dashboardContent.dashboard;
-				//alert("dash: "+ dashboard1.name);
-			const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
-				
-			var worksheet1 = worksheets1.find(function (sheet) {
-			return sheet.name === "Filter Testing";
-			});
-				
-				try{
-				alert("work: "+ worksheet1.name);
-				var fieldname="Category 1";
-				var fieldvalue=d.name;
-				worksheet1.clearFilterAsync(fieldname);
-				worksheet1.applyFilterAsync("Category 1","Staff",tableau.FilterUpdateType.Replace);
+			
+			if( count > 1)	
+			
+				{
+					var dashboard1 = tableau.extensions.dashboardContent.dashboard;
+
+					const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
+						
+					var worksheet1 = worksheets1.find(function (sheet) {
+					return sheet.name === "Filter Testing";
+					});
+						
+						try{
+						alert("work: "+ worksheet1.name);
+						var fieldname="Category 1";
+						var fieldvalue=d.name;
+						//worksheet1.clearFilterAsync(fieldname);
+						worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.Replace);
+						}
+						catch(err) {
+							  alert(err.message);
+							}
+					  
 				}
-				catch(err) {
-					  alert(err.message);
-					}
-				  update(d);
+			update(d);
 			}
-									
+				
+				count++;					
 		});
+		
 }
