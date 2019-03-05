@@ -179,12 +179,13 @@ function dataload(worksheet)
 		  //todo: set filter on parents where one bureau exists in multiple agencies
 		  if(d.depth==1 && d!=selected){ 
 			//click(selected);
-			//click(d); 
+			click(d); 
 			update(d); 
 			//tabfilter(d); 
 		  } else {
 		  	//tabfilter(d);
 			colored=d;
+			 click(d);
 			update(d);
 		  }
 		});
