@@ -298,7 +298,7 @@ function dataload(worksheet)
 						parameter = params.find(param => param.name === tableau.extensions.settings.get('Test_Param'));
         
 						});
-						alert(parameter.name);
+						alert(parameter);
 						 parameter.changeValueAsync(fieldvalue);
 					}
 						catch(err) 
