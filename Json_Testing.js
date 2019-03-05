@@ -22,10 +22,9 @@ $(document).ready(function() {
 
 		unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterChangedHandler) {
 		//alert("filter changed");
-		filterflag=1;
+		filterflag = 1;
 		dataload(worksheet);
-		filterflag=0;
-		
+		filterflag = 0;
 		});
 
 		// remove the event listener when done
@@ -40,11 +39,11 @@ $(document).ready(function() {
 function dataload(worksheet)
 {
 	
-	if(filterflag==1)
+	if(filterflag ==1)
 	{
 		d3.select("#TreeGraph").remove();
 	}
-
+	count++;
 	// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
 
@@ -272,35 +271,27 @@ function dataload(worksheet)
 				d._children = null;
 			  }
 			
-			
-			if( count > 1 and filterflag==0)	
-			
-				{
-					var dashboard1 = tableau.extensions.dashboardContent.dashboard;
-
-					const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
-						
-					var worksheet1 = worksheets1.find(function (sheet) {
-					return sheet.name === "Filter Testing";
-					});
-						
-						try{
-						alert("work: "+ worksheet1.name);
-						var fieldname="Category 1";
-						var fieldvalue=d.name;
-						//worksheet1.clearFilterAsync(fieldname);
-						//worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.Replace);
-						}
-						catch(err) {
-							  alert(err.message);
-							}
-							//update(d);
-					  
-				}
-			
-			}
+				//alert(d.name)
+			var dashboard1 = tableau.extensions.dashboardContent.dashboard;
+				//alert("dash: "+ dashboard1.name);
+			const worksheets1 = tableau.extensions.dashboardContent.dashboard.worksheets;
 				
-				count++;					
+			var worksheet1 = worksheets1.find(function (sheet) {
+			return sheet.name === "Filter Testing";
+			});
+				
+				try{
+				alert("work: "+ worksheet1.name);
+				var fieldname="Category 1";
+				var fieldvalue=d.name;
+				//worksheet1.clearFilterAsync(fieldname);
+				//worksheet1.applyFilterAsync(fieldname,fieldvalue,tableau.FilterUpdateType.Replace);
+				}
+				catch(err) {
+					  alert(err.message);
+					}
+				  update(d);
+			}
+									
 		});
-		
 }
