@@ -201,7 +201,7 @@ function dataload(worksheet)
 		});
 
 			  nodeEnter.append("circle")
-				  .attr("r", 1e-6)
+				  .attr("r", 4.5)
 				  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
 			  nodeEnter.append("text")
@@ -218,7 +218,7 @@ function dataload(worksheet)
 				  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
 			  nodeUpdate.select("circle")
-				  .attr("r", 10)
+				  .attr("r", 4.5)
 				  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
 			  nodeUpdate.select("text")
@@ -231,7 +231,7 @@ function dataload(worksheet)
 				  .remove();
 
 			  nodeExit.select("circle")
-				  .attr("r", 1e-6);
+				  .attr("r", 4.5);
 
 			  nodeExit.select("text")
 				  .style("fill-opacity", 1e-6);
