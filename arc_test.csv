@@ -2,10 +2,10 @@ year,CTY_CODE,CTYNAME,I_1,IYR,E_1,EYR
 2001,2000,Third party services,134,134,83,83
 2001,2001,Policy services - alteration services,236,236,139,139
 2001,2002,Brand image,395,395,53,53
-2001,2003,Product,915,915,477,477
-2001,2004,Price,"1227","1227",757,757
-2001,2005,Information & Communication,"1703","1703","1194","1194"
-2001,2006,General comments on services,"4638","4638","1013","1013"
-2001,2007,Claim management,"5230","5230","3075","3075"
-2001,2008,Don't know or nothing,"6455","6455","15241","15241"
-2001,2009,Staff,"7103","7103","3041","3041"
+2001,2003,Product,0,0,477,477
+2001,2004,Price,"0","0",757,757
+2001,2005,Information & Communication,"0","0","1194","1194"
+2001,2006,General comments on services,"0","0","1013","1013"
+2001,2007,Claim management,"0","0","3075","3075"
+2001,2008,Don't know or nothing,"0","0","15241","15241"
+2001,2009,Staff,"0","0","3041","3041"
