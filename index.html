@@ -1,58 +1,42 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Json Extension</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
+		<title>Smoothed D3.js Radar Chart</title>
 
-		<!-- jQuery -->
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+		<!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 		
-		 <style>
+		<style>
+			body {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 11px;
+				font-weight: 300;
+				fill: #242424;
+				text-align: center;
+				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+				cursor: default;
+			}
+			
+			.legend {
+				font-family: 'Raleway', sans-serif;
+				fill: #333333;
+			}
+			
+			.tooltip {
+				fill: #333333;
+			}
+		</style>
 	
-		.node {
-			cursor: pointer;
-		}
-		.node circle {
-		  fill: #fff;
-		  stroke: steelblue;
-		  stroke-width: 1.5px;
-		}
-		.node text {
-		  font-size: 10px;
-		  cursor:pointer;
-		  fill:black;
-		}
-		.link {
-		  fill: none;
-		  stroke: #ccc;
-		  stroke-width: 1px;
-		}
-	    </style>
-
-		<!-- Load d3.js -->
-		<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
-
-		<!-- Tableau Extensions API Library  -->
-		<script type="text/javascript" src="./tableau-extensions-1.1.0.js"></script>
-		
-		<!-- Tableau Extensions Library  -->
-		<script type="text/javascript" src="./Json_Testing.js"></script>
-
-
 	</head>
 	<body>
-		<div class="container">
-			<div>
-			
-			<p id="resultBox" class="lead"></p>
-			</div>
-		</div>
-		
+
+		<div class="radarChart"></div>
+
+		<script src="radarChart.js"></script>	
+		<script src="script.js"></script>
+
 	</body>
 </html>
