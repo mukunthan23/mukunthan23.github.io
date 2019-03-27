@@ -46,8 +46,8 @@ function dataload(worksheet)
 		var worksheetData = sumdata.data
 		var jsonObj = [];
 		var jsonObj1 = [];
-		var scoretype={};
-			
+	        var jsonObj3 = [];
+					
 		for (var i=0; i < worksheetData.length; i++) {
 			
 				if(i<16)
@@ -68,8 +68,9 @@ function dataload(worksheet)
 				}
 				
 			}
-			scoretype.current=jsonObj;
-			scoretype.aspired=jsonObj1;
+
+			jsonObj3.push(jsonObj);
+			jsonObj3.push(jsonObj1);
 			
 			var data=scoretype;
 			
