@@ -43,6 +43,7 @@ function dataload(worksheet)
 	// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
 	alert("inside dataload");
+		var worksheetData = sumdata.data
 		var jsonObj = [];
 		var jsonObj1 = [];
 		var scoretype={};
