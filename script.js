@@ -2,6 +2,7 @@
 var filterflag = 0;
 
 $(document).ready(function() {
+	alert("iamhere");
 // Hook up an event handler for the load button click.
 // Wait to initialize until the button is clicked.
 
