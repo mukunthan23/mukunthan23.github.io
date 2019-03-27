@@ -6,6 +6,7 @@
 /////////////////////////////////////////////////////////
 
 function RadarChart(id, data, options) {
+	alert("inside radar draw");
 	var cfg = {
 	 w: 600,				//Width of the circle
 	 h: 600,				//Height of the circle
