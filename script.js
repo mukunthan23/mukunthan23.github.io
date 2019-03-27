@@ -54,7 +54,7 @@
 			//////////////////// Draw the Chart ////////////////////////// 
 			////////////////////////////////////////////////////////////// 
 			var color = d3.scale.ordinal()
-				.range(["#EDC951","#CC333F","#00A0B0"]);
+				.range(["#1aa9a7","#1b365d","#ed7c31"]);
 				
 			var radarChartOptions = {
 			  w: width,
