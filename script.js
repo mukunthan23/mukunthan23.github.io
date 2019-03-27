@@ -2,9 +2,8 @@
 var filterflag = 0;
 
 $(document).ready(function() {
-	alert("iamhere");
-// Hook up an event handler for the load button click.
-// Wait to initialize until the button is clicked.
+
+alert("iamhere");
 
 	tableau.extensions.initializeAsync().then(function() {
 
@@ -67,7 +66,6 @@ function dataload(worksheet)
 			}
 			scoretype.current=jsonObj;
 			scoretype.aspired=jsonObj1;
-			alert(JSON.stringify(scoretype));
 			
 			var data=scoretype;
 			
