@@ -11,11 +11,12 @@ alert("iamhere");
 		var dashboard = tableau.extensions.dashboardContent.dashboard;
 		// Display the name of dashboard in the UI
 		const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
-
+alert("inside tableau");
 		// Find a specific worksheet 
 		var worksheet = worksheets.find(function (sheet) {
 		return sheet.name === "Extension Data";
 		});
+		alert(worksheet.name);
 
 		dataload(worksheet);
 
