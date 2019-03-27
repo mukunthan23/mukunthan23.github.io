@@ -1,55 +1,85 @@
-/* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
+
+var filterflag = 0;
+
+$(document).ready(function() {
+// Hook up an event handler for the load button click.
+// Wait to initialize until the button is clicked.
+
+	tableau.extensions.initializeAsync().then(function() {
+
+		// Initialization succeeded! Get the dashboard
+		var dashboard = tableau.extensions.dashboardContent.dashboard;
+		// Display the name of dashboard in the UI
+		const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
+
+		// Find a specific worksheet 
+		var worksheet = worksheets.find(function (sheet) {
+		return sheet.name === "Extension Data";
+		});
+
+		dataload(worksheet);
+
+		unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterChangedHandler) {
+		//alert("filter changed");
+		filterflag = 1;
+		dataload(worksheet);
+		filterflag = 0;
+		});
+
+		// remove the event listener when done
+		// unregisterEventHandlerFunction();
+		
+	}, function(err) {
+	// something went wrong in initialization
+	$("#resultBox").html("Error while Initializing: " + err.toString());
+	});
+});
+
+function dataload(worksheet)
+{
+	
+	// get the summary data for the sheet
+		worksheet.getSummaryDataAsync().then(function (sumdata) {
+
+		var jsonObj = [];
+		var jsonObj1 = [];
+		var scoretype={};
+		
+		for (var i=0; i < worksheetData.length; i++) {
+			
+				if(i<16)
+				{					
+					item = {}
+					item ["axis"] = worksheetData[i][0].value;
+					item ["value"] = worksheetData[i][2].value;
+					jsonObj.push(item);
+				}
+
+				if(i>15)
+				{
+					item = {}
+					item ["axis"] = worksheetData[i][0].value;
+					item ["value"] = worksheetData[i][2].value;
+					jsonObj1.push(item);
+				}
+				
+			}
+			scoretype.current=jsonObj;
+			scoretype.aspired=jsonObj1;
+			alert(JSON.stringify(scoretype));
+			
+			var data=scoretype;
+			
+			/* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
       
 			////////////////////////////////////////////////////////////// 
 			//////////////////////// Set-Up ////////////////////////////// 
 			////////////////////////////////////////////////////////////// 
 			var margin = {top: 100, right: 100, bottom: 100, left: 100},
-				width = Math.min(2000, window.innerWidth - 10) - margin.left - margin.right,
+				width = Math.min(600, window.innerWidth - 10) - margin.left - margin.right,
 				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
 					
-			////////////////////////////////////////////////////////////// 
-			////////////////////////// Data ////////////////////////////// 
-			////////////////////////////////////////////////////////////// 
-			var data = [
-
-
-
-					[//Samsung
-						{axis:"GOAL & STRATEGY SETTING",value:1},
-						{axis:"GOVERNANCE",value:2},
-						{axis:"CX ROADMAP",value:2},
-						{axis:"PROGRAM MANAGEMENT",value:2},
-						{axis:"BEHAVIORAL MEASUREMENT",value:1},
-						{axis:"INSIGHT ARCHITECTURE",value:1},
-						{axis:"EXPERIENCE MAPPING",value:4},
-						{axis:"OPERATIONAL SYSTEMS",value:2},
-						{axis:"PORTFOLIO MANAGEMENT",value:2},	
-						{axis:"RESOURCE ALLOCATION",value:1},	
-						{axis:"EXPERIENCE DESIGN",value:3},	
-						{axis:"CAUSAL MODELING",value:3},	
-						{axis:"COMMUNICATION",value:3},	
-						{axis:"COMPETENCY BUILDING",value:1},	
-						{axis:"PERFORMANCE MANAGEMENT",value:3},	
-						{axis:"EMPLOYEE AND PARTNER EXPERIENCE",value:2}
-					  ],[//Nokia Smartphone
-						{axis:"GOAL & STRATEGY SETTING",value:3},
-						{axis:"GOVERNANCE",value:4},
-						{axis:"CX ROADMAP",value:4},
-						{axis:"PROGRAM MANAGEMENT",value:5},
-						{axis:"BEHAVIORAL MEASUREMENT",value:2},
-						{axis:"INSIGHT ARCHITECTURE",value:3},
-						{axis:"EXPERIENCE MAPPING",value:5},
-						{axis:"OPERATIONAL SYSTEMS",value:4},
-						{axis:"PORTFOLIO MANAGEMENT",value:3},	
-						{axis:"RESOURCE ALLOCATION",value:2},	
-						{axis:"EXPERIENCE DESIGN",value:4},	
-						{axis:"CAUSAL MODELING",value:5},	
-						{axis:"COMMUNICATION",value:4},	
-						{axis:"COMPETENCY BUILDING",value:3},	
-						{axis:"PERFORMANCE MANAGEMENT",value:5},	
-						{axis:"EMPLOYEE AND PARTNER EXPERIENCE",value:3}
-					  ]
-					];
+			
 			////////////////////////////////////////////////////////////// 
 			//////////////////// Draw the Chart ////////////////////////// 
 			////////////////////////////////////////////////////////////// 
@@ -67,3 +97,5 @@
 			};
 			//Call function to draw the Radar chart
 			RadarChart(".radarChart", data, radarChartOptions);
+		});
+}
