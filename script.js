@@ -3,7 +3,7 @@ var filterflag = 0;
 
 //$(document).ready(function() {
 
-alert("iamhere");
+
 
 	tableau.extensions.initializeAsync().then(function() {
 
@@ -11,12 +11,12 @@ alert("iamhere");
 		var dashboard = tableau.extensions.dashboardContent.dashboard;
 		// Display the name of dashboard in the UI
 		const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
-alert("inside tableau");
+
 		// Find a specific worksheet 
 		var worksheet = worksheets.find(function (sheet) {
 		return sheet.name === "Extension Data";
 		});
-		alert(worksheet.name);
+		
 
 		dataload(worksheet);
 
@@ -70,6 +70,8 @@ function dataload(worksheet)
 			scoretype.aspired=jsonObj1;
 			
 			var data=scoretype;
+			
+			alert(JSON.stringify(data));
 			
 			/* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
       
