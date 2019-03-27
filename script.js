@@ -1,7 +1,7 @@
 
 var filterflag = 0;
 
-$(document).ready(function() {
+//$(document).ready(function() {
 
 alert("iamhere");
 
@@ -33,7 +33,7 @@ alert("iamhere");
 	// something went wrong in initialization
 	$("#resultBox").html("Error while Initializing: " + err.toString());
 	});
-});
+//});
 
 function dataload(worksheet)
 {
