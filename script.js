@@ -39,10 +39,10 @@ var filterflag = 0;
 
 function dataload(worksheet)
 {
-	alert("inside dataload");
+
 	// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
-
+	alert("inside dataload");
 		var jsonObj = [];
 		var jsonObj1 = [];
 		var scoretype={};
@@ -63,6 +63,12 @@ function dataload(worksheet)
 					item ["axis"] = worksheetData[i][0].value;
 					item ["value"] = worksheetData[i][2].value;
 					jsonObj1.push(item);
+					
+				}
+				if(i==0)
+				{
+					alert(item ["axis"]); 
+					alert(item ["value"]);
 				}
 				
 			}
