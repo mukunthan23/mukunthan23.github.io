@@ -39,7 +39,7 @@ var filterflag = 0;
 
 function dataload(worksheet)
 {
-	
+	alert("inside dataload");
 	// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
 
@@ -71,7 +71,7 @@ function dataload(worksheet)
 			
 			var data=scoretype;
 			
-			alert(JSON.stringify(data));
+			alert(JSON.stringify(scoretype));
 			
 			/* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
       
