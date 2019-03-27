@@ -46,6 +46,7 @@ function dataload(worksheet)
 		var jsonObj = [];
 		var jsonObj1 = [];
 		var scoretype={};
+			alert(worksheetData.length);
 		
 		for (var i=0; i < worksheetData.length; i++) {
 			
@@ -67,8 +68,8 @@ function dataload(worksheet)
 				}
 				if(i==0)
 				{
-					alert(item ["axis"]); 
-					alert(item ["value"]);
+					alert(worksheetData[i][0].value); 
+					alert(worksheetData[i][2].value);
 				}
 				
 			}
