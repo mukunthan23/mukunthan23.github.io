@@ -5,7 +5,7 @@ var filterflag = 0;
 
 alert("iamhere");
 
-	tableau.extensions.initializeAsync().then(function() {
+	/*tableau.extensions.initializeAsync().then(function() {
 
 		// Initialization succeeded! Get the dashboard
 		var dashboard = tableau.extensions.dashboardContent.dashboard;
@@ -33,6 +33,7 @@ alert("iamhere");
 	// something went wrong in initialization
 	$("#resultBox").html("Error while Initializing: " + err.toString());
 	});
+	*/
 //});
 
 function dataload(worksheet)
