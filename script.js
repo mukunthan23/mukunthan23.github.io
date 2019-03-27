@@ -72,9 +72,9 @@ function dataload(worksheet)
 			jsonObj3.push(jsonObj);
 			jsonObj3.push(jsonObj1);
 			
-			var data=scoretype;
+			var data=jsonObj3;
 			
-			//alert(JSON.stringify(scoretype));
+			alert(JSON.stringify(jsonObj3));
 			
 			/* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
       
