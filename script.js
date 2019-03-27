@@ -42,13 +42,12 @@ function dataload(worksheet)
 
 	// get the summary data for the sheet
 		worksheet.getSummaryDataAsync().then(function (sumdata) {
-	alert("inside dataload");
+	
 		var worksheetData = sumdata.data
 		var jsonObj = [];
 		var jsonObj1 = [];
 		var scoretype={};
-			alert(worksheetData.length);
-		
+			
 		for (var i=0; i < worksheetData.length; i++) {
 			
 				if(i<16)
@@ -67,11 +66,6 @@ function dataload(worksheet)
 					jsonObj1.push(item);
 					
 				}
-				if(i==0)
-				{
-					alert(worksheetData[i][0].value); 
-					alert(worksheetData[i][2].value);
-				}
 				
 			}
 			scoretype.current=jsonObj;
@@ -79,7 +73,7 @@ function dataload(worksheet)
 			
 			var data=scoretype;
 			
-			alert(JSON.stringify(scoretype));
+			//alert(JSON.stringify(scoretype));
 			
 			/* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
       
