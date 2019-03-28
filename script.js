@@ -74,7 +74,7 @@ function dataload(worksheet)
 			
 			var data=jsonObj3;
 			
-			//alert(JSON.stringify(jsonObj3));
+			alert(JSON.stringify(jsonObj3));
 			
 			/* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
       
