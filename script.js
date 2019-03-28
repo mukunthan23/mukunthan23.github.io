@@ -53,16 +53,16 @@ function dataload(worksheet)
 				if(i<16)
 				{					
 					item = {}
-					item ["axis"] = worksheetData[i][4].value;
-					item ["value"] = worksheetData[i][3].value;
+					item ["axis"] = worksheetData[i][3].value;
+					item ["value"] = worksheetData[i][4].value;
 					jsonObj.push(item);
 				}
 
 				if(i>15)
 				{
 					item = {}
-					item ["axis"] = worksheetData[i][4].value;
-					item ["value"] = worksheetData[i][3].value;
+					item ["axis"] = worksheetData[i][3].value;
+					item ["value"] = worksheetData[i][4].value;
 					jsonObj1.push(item);
 					
 				}
