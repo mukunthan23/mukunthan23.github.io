@@ -21,7 +21,7 @@ var filterflag = 0;
 		dataload(worksheet);
 
 		unregisterEventHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, function (filterChangedHandler) {
-		alert("filter changed");
+		//alert("filter changed");
 		filterflag = 1;
 		dataload(worksheet);
 		filterflag = 0;
