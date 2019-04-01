@@ -4,7 +4,7 @@ $(document).ready(function() {
 // Hook up an event handler for the load button click.
 // Wait to initialize until the button is clicked.
 
-var dateformat = new Date().toLocaleDateString("en-US");
+var dateformat = new Date().toLocaleDateString("en-IN");
 	tableau.extensions.initializeAsync().then(function() {
 
 						var parameter;
