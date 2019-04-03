@@ -30,7 +30,8 @@
 					var link = document.createElement('a');
 					link.addEventListener('click', function(ev) 
 					{
-						alert(canvas.toDataURL("image/png"));
+						//alert(canvas.toDataURL("image/png"));
+						$("#resultBox").html(canvas.toDataURL("image/png"));
 						link.href = canvas.toDataURL("image/png")
 						link.download = "screenshot.png";
 					}, false);
@@ -45,6 +46,8 @@
 
 		<div id="screen_shot" onclick="divclick()"; >
 		<img src="screenshot (2).png"  height="32" width="32">
+		</div>
+		<div id="resultbox">
 		</div>
 
 		
