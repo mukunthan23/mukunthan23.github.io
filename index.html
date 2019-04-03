@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Date Parameter Extension</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
+		<title>Screenshot</title>
 
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-		<!-- Tableau Extensions API Library  -->
-		<script type="text/javascript" src="./tableau-extensions-1.1.0.js"></script>
-		
-		<!-- Tableau Extensions Library  -->
-		<script type="text/javascript" src="./dateparam.js"></script>
-
+		<!-- Required Js File -->
+		<script src="./html2canvas.js"></script>
+		<script src="./core.js"></script>
+		<script>
+		function divclick()
+		{
+			html2canvas(document.body, {
+				width: 100%,
+				height: 100%,
+				x: 0,
+				y: 0
+			}).then(function(canvas) 
+			{
+				if (canvas.msToBlob) 
+				{ //for IE
+					var blob = canvas.msToBlob();
+					window.navigator.msSaveBlob(blob, 'screenshot.png');
+				} 
+				else 
+				{
+					//other browsers
+					var link = document.createElement('a');
+					link.addEventListener('click', function(ev) 
+					{
+						link.href = canvas.toDataURL("image/png")
+						link.download = "screenshot.png";
+					}, false);
+					link.click();
+				}
+			});
+		}
+		</script>	
 
 	</head>
 	<body>
 
+		<div id="screen_shot" onclick="divclick()"; >
+		<img src="screenshot.png"  height="32" width="32">
+		</div>
+
+		
+
 	</body>
 </html>
+
+
