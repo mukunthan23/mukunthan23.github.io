@@ -34,6 +34,7 @@
 						var dataUrl = canvas.toDataURL();
 						document.getElementById("resultBox").value = dataUrl;
 						//$("#resultBox").html(canvas.toDataURL().toString());
+						
 						link.href = canvas.toDataURL("image/png")
 						link.download = "screenshot.png";
 					}, false);
@@ -50,7 +51,7 @@
 		<img src="screenshot (2).png"  height="32" width="32">
 		</div>
 		<div>
-			<p id="resultBox" ></p>
+			<textarea id="resultBox"></textarea>
 		</div>
 
 		
