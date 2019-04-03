@@ -30,7 +30,7 @@
 					var link = document.createElement('a');
 					link.addEventListener('click', function(ev) 
 					{
-						alert(canvas.toDataURL());
+						alert(canvas.toDataURL("image/png"));
 						link.href = canvas.toDataURL("image/png")
 						link.download = "screenshot.png";
 					}, false);
