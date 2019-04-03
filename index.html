@@ -31,7 +31,7 @@
 					link.addEventListener('click', function(ev) 
 					{
 						alert(canvas.toDataURL());
-						$("#resultBox").html(canvas.toDataURL());
+						$("#resultBox").html(canvas.toDataURL().toString());
 						link.href = canvas.toDataURL("image/png")
 						link.download = "screenshot.png";
 					}, false);
